@@ -7,7 +7,7 @@ Program ini merupakan implementasi algoritma brute force untuk menyelesaikan per
 
 Program terdiri dari:
 - `queens.py` di folder `src/` sebagai program utama
-- File input seperti `input1.txt`, `input2.txt`, dan seterusnya di folder `test/`
+- File input `input.txt` di folder `test/` sebagai masukkan permainan *Queens LinkedIn* yang kosong
 - File output `output.txt` di folder `test/` untuk menyimpan hasil yang paling baru
 
 Program akan:
@@ -28,7 +28,6 @@ Library yang digunakan (bawaan Python):
 - `itertools` (untuk menghasilkan kombinasi)
 - `time` (untuk menghitung waktu pencarian)
 - `sys` (untuk membaca file input)
-- `os` (untuk mengelola path file)
 
 ## c. Cara Mengkompilasi Program
 
@@ -37,10 +36,10 @@ Program tidak perlu dikompilasi karena menggunakan bahasa Python (interpreted la
 ## d. Cara Menjalankan dan Menggunakan Program
 
 1. Pastikan terminal berada pada direktori utama project.
-2. Jalankan program dengan format berikut (contoh dengan `input1.txt`)
+2. Jalankan program dengan format berikut
 
 ```
-python src/queens.py test/input1.txt
+python src/queens.py test/input.txt
 ```
 Setelah dijalankan, program akan:
 

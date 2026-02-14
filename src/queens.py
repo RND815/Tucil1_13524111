@@ -9,21 +9,21 @@ def load_board(filename):
 
 def save_board(board, queens):
     with open("test/output.txt", "w") as f:
-        size = len(board)
-        for r in range(size):
-            row = ""
-            for c in range(size):
+        n = len(board)
+        for r in range(n):
+            line = ""
+            for c in range(len(board[r])):
                 if (r, c) in queens:
-                    row += "#"
+                    line += "#"
                 else:
-                    row += board[r][c]
-            f.write(row.strip() + "\n")
+                    line += board[r][c]
+            f.write(line.strip() + "\n")
 
 def build_regions(board):
     regions = defaultdict(list)
     n = len(board)
     for r in range(n):
-        for c in range(n):
+        for c in range(len(board[r])):
             regions[board[r][c]].append((r, c))
     return regions
 
@@ -36,20 +36,20 @@ def is_valid(positions):
                 return False
             if c1 == c2:
                 return False
-            if abs(r1 - r2) == abs(c1 - c2):
+            if (abs(r1 - r2) <= 1) and (abs(c1 - c2) <= 1):
                 return False
     return True
 
 def print_board(board, queens):
     n = len(board)
     for r in range(n):
-        row = ""
-        for c in range(n):
+        line = ""
+        for c in range(len(board[r])):
             if (r, c) in queens:
-                row += "#"
+                line += "#"
             else:
-                row += board[r][c]
-        print(row)
+                line += board[r][c]
+        print(line)
     print()
 
 def main():
